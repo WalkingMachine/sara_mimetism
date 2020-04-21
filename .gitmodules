@@ -1,0 +1,3 @@
+[submodule "MTI805"]
+	path = MTI805
+	url = git@github.com:NicoLeNeko/MTI805.git
