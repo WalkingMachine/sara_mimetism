@@ -11,12 +11,17 @@ class MimetismeWrapper(object):
         rospy.init_node("MimetismeWrapper")
         print("Just initialised MimetismeWrapper")
 
-    #Call bash command equivalent "python openpifpafwebdemo | python pifpafToMoveit"
+    #Call bash command equivalent "python <openpifpafwebdemo> | python pifpafToMoveit"
     def main_task(self):
         p1 = Popen(split("python3 ../MTI805/openpifpafwebdemo/server.py"), stdout=PIPE)
+        p2 = Popen(split("python2 pifpafToMoveit.py"), stdin=p1.stdout)
+
+    def test_task(self):
+        p1 = Popen(split("cat ../test_files/pifpaf_feed_1.txt"), stdout=PIPE)
         p2 = Popen(split("python2 pifpafToMoveit.py"), stdin=p1.stdout)
 
 
 if __name__ == "__main__":
     mime = MimetismeWrapper()
-    mime.main_task()
+#    mime.main_task()
+    mime.test_task()
