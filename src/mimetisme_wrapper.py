@@ -17,11 +17,12 @@ class MimetismeWrapper(object):
         p2 = Popen(split("python2 pifpafToMoveit.py"), stdin=p1.stdout)
 
     def test_task(self):
-        p1 = Popen(split("cat ../test_files/pifpaf_feed_1.txt"), stdout=PIPE)
+        p1 = Popen(split("cat ../test_files/pifpaf_feed_3.txt"), stdout=PIPE)
         p2 = Popen(split("python2 pifpafToMoveit.py"), stdin=p1.stdout)
 
 
 if __name__ == "__main__":
     mime = MimetismeWrapper()
 #    mime.main_task()
+
     mime.test_task()
