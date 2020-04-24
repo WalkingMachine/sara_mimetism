@@ -1,0 +1,4 @@
+<launch>
+    <arg name="file_path" default="src/mimetisme_wrapper.py"/>
+    <node name="mimetisme_wrapper" pkg="sara_mimetism" type="MimetismeWrapper" output="screen" />
+</launch>
