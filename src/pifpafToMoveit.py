@@ -3,7 +3,7 @@
 # From https://stackoverflow.com/a/55517239/7243716 or https://stackoverflow.com/questions/35176451/python-code-to-calculate-angle-between-three-point-using-their-3d-coordinates#35178910
 import numpy as np
 import math
-from geometry_msgs.msg import Pose
+from geometry_msgs.msg import Pose, Point
 from moveit_commander import MoveGroupCommander
 from tf import transformations
 
@@ -161,7 +161,7 @@ def moyenne_mobile(list_values):
 
 def sendCommandToMoveit(PERIODICITY, cycles_without_sending, last_value, latest_state={}):
 #    self.group.set_pose_target(userdata.target)
-    latest_state.group.set_position_target(last_value)
+    latest_state.group.set_position_target(Point(last_value))
     plan = latest_state.group.plan()
     latest_state.endState = plan.joint_trajectory.points[len(plan.joint_trajectory.points) - 1].positions
     latest_state.group.execute(plan, wait=False)

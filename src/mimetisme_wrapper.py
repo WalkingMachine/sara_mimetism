@@ -9,7 +9,7 @@ from shlex import split
 class MimetismeWrapper(object):
     def __init__(self, group="RightArm"):
         rospy.init_node("MimetismeWrapper")
-        print("Just initialised MimetismeWrapper")
+        print("-------------------Just initialised MimetismeWrapper--------------------")
 
     #Call bash command equivalent "python <openpifpafwebdemo> | python pifpafToMoveit"
     def main_task(self):
