@@ -1,0 +1,4 @@
+* sara_mimetism
+Using moveit and openPifPaf to imitate an arm motion of a person
+** Lien du rapport pré-phase 3
+https://docs.google.com/document/d/1Inyn6UBE66CFXrwI6tUZ-8rjBL_Zgb_TwB6Qzp8oVAc/edit?usp=sharing
